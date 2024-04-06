@@ -1,0 +1,29 @@
+{
+  "name": "user-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.35.0",
+    "eslint-config-next": "^14.1.3",
+    "express": "^4.18.2",
+    "jotai": "^2.0.3",
+    "mongoose": "^7.0.2",
+    "next": "^14.1.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.51.2",
+    "swr": "^2.2.5"
+  }
+}
