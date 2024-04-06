@@ -1,5 +1,4 @@
 // RouteGuard.js
-
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -27,13 +26,11 @@ export default function RouteGuard(props) {
   }, []);
 
   async function updateAtoms() {
-    if (isAuthenticated()) {
-      const favourites = await getFavourites();
-      setFavouritesList(favourites);
+    const favourites = await getFavourites();
+    setFavouritesList(favourites);
 
-      const history = await getHistory();
-      setSearchHistory(history);
-    }
+    const history = await getHistory();
+    setSearchHistory(history);
   }
 
   async function authCheck(url) {
