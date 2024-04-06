@@ -1,18 +1,18 @@
-// MainNav.js
 import { Container, Nav, Navbar, Form, Button, NavDropdown } from "react-bootstrap";
-import Link from 'next/link'; // Import Link from next/link
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useAtom } from "jotai";
 import { searchHistoryAtom } from "../store";
 import { addToHistory } from "../lib/userData";
-import { readToken, removeToken } from '../lib/authenticate';
+import { readToken, removeToken } from '../lib/';
 
 export default function MainNav() {
   const router = useRouter();
   const token = readToken();
 
   function logout() {
+    setIsExpanded(false);
     removeToken();
     router.push('/login');
   }
