@@ -19,8 +19,12 @@ export default function Register() {
       return;
     }
     try {
-      await registerUser(user, password, password2);
-      router.push('/login');
+      const success = await registerUser(user, password, password2);
+      if (success) {
+        router.push('/login');
+      } else {
+        setWarning('Registration failed. Please try again.');
+      }
     } catch (err) {
       setWarning(err.message);
     }
