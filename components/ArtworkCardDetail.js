@@ -2,9 +2,9 @@ import { Button, Card } from 'react-bootstrap';
 import useSWR from 'swr';
 import Error from 'next/error';
 import { useAtom } from 'jotai';
-import { favouritesAtom } from '../store';
-import { useState, useEffect } from 'react';
+import { favouritesAtom } from '@/store';
 import { addToFavourites, removeFromFavourites } from '../lib/userData';
+import { useState, useEffect } from 'react';
 
 export default function ArtworkCardDetail({ objectID }) {
 
@@ -14,19 +14,14 @@ export default function ArtworkCardDetail({ objectID }) {
   const [showAdded, setShowAdded] = useState(false);
 
   useEffect(() => {
-    setShowAdded(favouritesList?.includes(objectID))
+    setShowAdded(favouritesList?.includes(objectID));
   }, [favouritesList]);
 
   async function favouritesClicked() {
-    try {
-      if (showAdded) {
-        setFavouritesList(await removeFromFavourites(objectID));
-      } else {
-        setFavouritesList(await addToFavourites(objectID));
-      }
-      setShowAdded(!showAdded);
-    } catch (error) {
-      console.error("Error:", error);
+    if (showAdded) {
+      setFavouritesList(await removeFromFavourites(objectID));
+    } else {
+      setFavouritesList(await addToFavourites(objectID));
     }
   }
 
@@ -35,7 +30,7 @@ export default function ArtworkCardDetail({ objectID }) {
   }
 
   if (data) {
-    return (<>
+    return (
       <Card>
         {data.primaryImage && <Card.Img variant="top" src={data.primaryImage} />}
         <Card.Body>
@@ -50,16 +45,16 @@ export default function ArtworkCardDetail({ objectID }) {
             <strong>Credit Line: </strong> {data.creditLine || "N/A"}<br />
             <strong>Dimensions: </strong> {data.dimensions || "N/A"}<br /><br />
 
-            <Button variant={showAdded ? "primary" : "outline-primary"} onClick={favouritesClicked}>+ Favourite {showAdded && "( added )"}</Button>
+            <Button variant={showAdded ? "primary" : "outline-primary"} onClick={favouritesClicked}>
+              + Favourite {showAdded && "( added )"}
+            </Button>
 
           </Card.Text>
 
         </Card.Body>
       </Card>
-
-    </>);
-
+    );
   } else {
-    return null
+    return null;
   }
 }
