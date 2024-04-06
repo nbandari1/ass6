@@ -1,3 +1,12 @@
+/********************************************************************************** 
+ * WEB422 – Assignment 06* 
+ * I declare that this assignment is my own work in accordance with Seneca Academic Policy. 
+ * No part of this* assignment has been copied manually or electronically from any other source
+ *  (including web sites) or* distributed to other students.*
+ * * Name: Nishnath Bandari    Student ID: 105202220    Date: 2024-04-06 ** 
+ * Vercel App (Deployed) Link: https://ass6-eiwb-cb5byu69n-nbandari1s-projects.vercel.app/
+ * *********************************************************************************/
+
 import { Image, Row, Col } from "react-bootstrap";
 
 export default function Home() {
