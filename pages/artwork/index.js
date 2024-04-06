@@ -2,10 +2,10 @@ import useSWR from 'swr';
 import { useState, useEffect } from 'react';
 import { Card, Col, Container, Pagination, Row } from 'react-bootstrap';
 import { useRouter } from 'next/router';
-import ArtworkCard from '../../components/ArtworkCard';
+import ArtworkCard from '@/components/ArtworkCard';
 import Error from 'next/error';
 
-import validObjectIDList from '../../public/data/validObjectIDList.json';
+import validObjectIDList from '@/public/data/validObjectIDList.json';
 
 const PER_PAGE = 12;
 
